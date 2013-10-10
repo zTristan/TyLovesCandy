@@ -31,7 +31,7 @@ namespace :deploy do
     # Start new workers
     run "kill -USR2 `cat #{File.join(shared_path,'pids','unicorn.pid')}`"
 
-    sleep 120
+    sleep 10
 
     # Kill off old workers
     run "kill `cat #{File.join(shared_path,'pids','unicorn.pid.oldbin')}`"
