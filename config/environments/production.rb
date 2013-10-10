@@ -68,7 +68,7 @@ TyLovesCandy::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => "tylovescandy-photos-dev",
+      :bucket => "tylovescandy-photos",
       :access_key_id => "AKIAJISH2B4Q3I5NEZGA",
       :secret_access_key => "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"
     }

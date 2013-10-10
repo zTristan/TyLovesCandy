@@ -10,7 +10,8 @@ role :app, "162.243.128.152"                          # This may be the same as 
 role :db,  "162.243.128.152", :primary => true # This is where Rails migrations will run
 role :db,  "162.243.128.152"
 
-after "deploy:update", "deploy:cleanup" 
+after "deploy:update", "deploy:cleanup"
+after "deploy", "config:symlink"
 
 namespace :deploy do
   
@@ -38,4 +39,11 @@ namespace :deploy do
     
   end
 
+end
+
+namespace :config do
+  desc "Symlink application config files."
+  task :symlink do
+    run "ln -s {#{shared_path},#{release_path}}/config/secret_token.yml"  
+  end
 end
