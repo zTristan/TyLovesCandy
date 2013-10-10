@@ -7,11 +7,8 @@ development:
     w: 1
     
 production:
+  host: 127.0.0.1
   port: 27017
-  database: zenia
-  hosts:
-    - "internal-a-1.ageofthedragonking.com:27017"
-    - "internal-b-1.ageofthedragonking.com:27017"
-    - "internal-c-1.ageofthedragonking.com:27017"
+  database: tylovescandy
   options:
     w: 1
