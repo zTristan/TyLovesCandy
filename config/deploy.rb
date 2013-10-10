@@ -10,8 +10,6 @@ role :app, "162.243.128.152"                          # This may be the same as 
 role :db,  "162.243.128.152", :primary => true # This is where Rails migrations will run
 role :db,  "162.243.128.152"
 
-require 'capistrano/ext/multistage'
-
 after "deploy:update", "deploy:cleanup" 
 
 namespace :deploy do

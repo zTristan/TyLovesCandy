@@ -1,5 +1,5 @@
 
-worker_processes 25
+worker_processes 10
 
 working_directory "/var/www/TyLovesCandy/current"
 
