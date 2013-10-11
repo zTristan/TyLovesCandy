@@ -44,6 +44,6 @@ end
 namespace :config do
   desc "Symlink application config files."
   task :symlink do
-    run "ln -s {#{shared_path},#{release_path}}/config/initializers/secret_token.rb"  
+    run "ln -s #{shared_path}/config/initializers/secret_token.rb #{release_path}/config/initializers/secret_token.rb"  
   end
 end
