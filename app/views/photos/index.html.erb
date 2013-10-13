@@ -1,6 +1,6 @@
 <% @photos.each do |photo| %>
   <div class="photo">
-    <%= link_to image_tag(photo.image.url), :action => "show", :id => photo._id %>
+    <%= link_to image_tag(photo.upload.url), :action => "show", :id => photo._id %>
     <div class="actions">
       <%= link_to "Edit", edit_photo_path(photo) %> |
       <%= link_to "Destroy", photo, :confirm => 'Are you sure?', :method => :delete %>

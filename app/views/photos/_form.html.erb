@@ -1,7 +1,7 @@
 <%= form_for @photo, :html => { :multipart => true } do |f| %>
   <p>
-    <% if @photo.image.exists? %>
-      <%= image_tag @photo.image.url %><br/>
+    <% if @photo.upload.exists? %>
+      <%= image_tag @upload.image.url %><br/>
     <% end %>
     <%= f.file_field :image %>
   </p>

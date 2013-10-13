@@ -1,13 +1,28 @@
-<h1>Log in</h1>
 
-<%= form_tag sessions_path do %>
-  <div class="field">
+
+<%= form_tag sessions_path, :html => { :class => 'form-horizontal' }  do %>
+  <fieldset>
+
+  <legend><h1>Login</h1></legend>
+
+  <div class="field control-group">
     <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
+    <div class="controls">
+      <%= text_field_tag :email, params[:email] %>
+    </div>
   </div>
-  <div class="field">
+
+  <div class="field control-group">
     <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <div class="controls">
+      <%= password_field_tag :password %>
+    </div>
   </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+
+  <div class="actions form-actions">
+    <%= submit_tag "Log in", :class => "btn btn-primary" %>
+  </div>
+
+  </fieldset>
+
 <% end %>

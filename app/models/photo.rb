@@ -1,12 +1,8 @@
-class Photo
-  include MongoMapper::Document
-  include Paperclip::Glue
+class Photo < Upload
 
-  key :title, String
-  key :image_file_name, String
-
-  attr_accessor :image_content_type, :image_file_size
-  has_attached_file :image, styles: {
+  attr_accessor :upload_content_type, :upload_file_name
+  attr_accessible :upload
+  has_attached_file :upload, styles: {
     :thumb    => ['100x100>',   :jpg],
     :square   => ['200x200#',   :jpg],
     :original => ['1920x1680>', :jpg],
@@ -15,6 +11,6 @@ class Photo
     :large    => ['500x500>',   :jpg]
   }, :default_style => :thumb
 
-  validates_attachment_presence :image
-  validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
+  validates_attachment_presence :upload
+  validates_attachment_content_type :upload, :content_type => ['image/jpeg', 'image/png']
 end

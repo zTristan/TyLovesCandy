@@ -11,11 +11,9 @@
  *= require_self
  *= require_tree .
  */
-body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
-}
+
+ /*
+
 
 a img {
   border: none;
@@ -38,6 +36,43 @@ a {
   padding: 20px 40px;
   border: solid 1px black;
   margin-top: 20px;
+}
+
+
+*/
+
+body {
+  font-family: "Futura-Medium";
+}
+
+.header {
+  padding: 10px 15px 10px;
+  text-align: left;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
+
+.header-title {
+  font-family: 'AlexBrush-Regular';
+  font-size: 90px;
+}
+
+.header-subtitle {
+  padding: 20px 15px 40px;
+  font-size: 20px;
+}
+
+#header-img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 200px;
+  z-index: -1;
+}
+
+.yield-content { 
+  padding-top: 20px; 
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -106,16 +141,10 @@ form .field, form .actions {
 @font-face {
   font-family: 'AlexBrush-Regular';
   src: url('AlexBrush-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: "900";
   font-style: normal;
 }
 
-.title {
+.brand {
   font-family: 'AlexBrush-Regular';
-  font-size: 8em;
-}
-
-.subtitle {
-  font-family: "Futura-Medium";
-  font-size: 2em;
 }

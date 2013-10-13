@@ -9,6 +9,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def check_for_user
+    unless session[:user_id]
+      flash[:error] = "Not logged in. Can't access that page."
+      redirect_to new_session_path and return
+    end
+  end
+
   def check_for_mobile
     session[:mobile_override] = params[:mobile] if params[:mobile]
     prepare_for_mobile if mobile_device?

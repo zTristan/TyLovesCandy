@@ -1,22 +1,3 @@
-<div class="title">Ty Loves Candy</div>
-<div class="subtitle">The Wedding Game for Tyler Stanley and Candace Flores</div>
-
-<div stlye="float: left; display: inline-block;">
-  <ul>
-    <li><%= link_to "How To Play", photos_path %></li>
-    <li><%= link_to "Galleries", photos_path %></li>
-    <li><%= link_to "About", photos_path %></li>
-  <% if @current_user %>
-  <% else %>
-    <li><%= link_to "Sign Up To Play", new_user_path %></li>
-    <li><%= link_to "Login", new_session_path %></li>
-  <% end %>
-  </ul>
-</div>
-
 <div style="float: left; display: inline-block;">
   <%= image_tag "23307702_475.jpg" %>
 </div>
-<div style="clear: both;"></div>
-
-<%= video_tag("zenia_intro.mov") %>

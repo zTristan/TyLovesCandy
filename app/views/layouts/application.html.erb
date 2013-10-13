@@ -4,22 +4,67 @@
   <title>TyLovesCandy</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag 'flowplayer.min.js' %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= params[:controller] %>">
 
-  <div id="container">
+  <div class="container">
 
-  <% if @current_user %>
-  <div class="loggedin_header">        
-    Welcome, <%= @current_user.name ? @current_user.name : @current_user.email %> (<%= link_to "Edit", edit_user_path(@current_user._id) %> | <%= link_to "logout", :controller => :sessions, :action => :destroy %>)
-  </div>
-  <% end %>
+    <div class="navbar navbar-fixed-top" data-toggle="collapse" data-target=".nav-collapse">
+      <div class="navbar-inner">
+        <div class="container">
+          <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/">TyLovesCandy</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Galleries", photos_path %></li>
+              <li><%= link_to "Rankings", rankings_path %></li>
+              <li><%= link_to "How To Play", how_to_play_path %></li>
+            </ul>
+            <div class="span3 pull-right">
+            <% if @current_user %>
+              <div class="btn-group">
+                <button class="btn"><%= link_to "Vote", new_session_path %></button>
+                <button class="btn"><%= link_to "Upload", uploads_path %></button>
+              </div>
+              <button class="btn"><%= link_to "Logout", :controller => :sessions, :action => :destroy %></button>
+              <% else %>
+              <div class="btn-group">
+                <button class="btn"><%= link_to "Sign Up", new_user_path %></button>
+                <button class="btn"><%= link_to "Login", new_session_path %></button>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %> 
-  <%= yield %>
+    <% if flash.count > 0 %>
+    <div class="row">
+      <div class="span12">        
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %> 
+      </div>
+    </div>
+    <% end %>
+
+    <div class="page-header header" id="content">
+      <div class="container">
+        <h1 class="header-title">Ty Loves Candy <small>The Wedding Game for Tyler Stanley and Candace Flores</small></h1>
+      </div>
+      <span id="header-img"></span>
+    </div>
+
+    <div class="row yield-content">
+      <div class="span12"><%= yield %></div>
+    </div>
 
   </div>
 

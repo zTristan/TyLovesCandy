@@ -3,7 +3,7 @@ class User
   include Paperclip::Glue
   include ActiveModel::SecurePassword
 
-  has_many :photos
+  has_many :uploads
 
   key :name, String
   key :email, String
@@ -11,8 +11,8 @@ class User
   attr_accessible :password, :password_confirmation
   has_secure_password
 
-  attr_accessor :name
   attr_accessor :avatar_content_type, :avatar_file_size
+  attr_accessible :avatar
   has_attached_file :avatar, styles: {
     thumb: '100x100>'
   }, :default_style => :thumb
