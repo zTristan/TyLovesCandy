@@ -19,4 +19,8 @@ class User
 
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
   validates_presence_of :password, :on => :create
+
+  def email= email
+    write_key(:email, email.downcase)
+  end
 end
