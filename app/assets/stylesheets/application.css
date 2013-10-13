@@ -12,37 +12,38 @@
  *= require_tree .
  */
 
- /*
-
-
-a img {
-  border: none;
-}
-
-a {
-  color: #0000FF;
-}
-
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
-
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
-}
-
-
-*/
-
+html,
 body {
-  font-family: "Futura-Medium";
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+code {
+  font-size: 80%;
 }
 
 .header {
@@ -53,12 +54,8 @@ body {
 
 .header-title {
   font-family: 'AlexBrush-Regular';
-  font-size: 90px;
-}
-
-.header-subtitle {
-  padding: 20px 15px 40px;
-  font-size: 20px;
+  line-height: 90%;
+  font-size: 70px;
 }
 
 #header-img {
@@ -72,7 +69,7 @@ body {
 }
 
 .yield-content { 
-  padding-top: 20px; 
+  padding-top: 5px; 
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -141,10 +138,50 @@ form .field, form .actions {
 @font-face {
   font-family: 'AlexBrush-Regular';
   src: url('AlexBrush-Regular.ttf') format('truetype');
-  font-weight: "900";
-  font-style: normal;
 }
 
 .brand {
   font-family: 'AlexBrush-Regular';
 }
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+ /* custom player skin */
+ .flowplayer { width: 480px; background-color: #222; background-size: cover; max-width: 800px; }
+ .flowplayer .fp-controls { background-color: rgba(0, 0, 0, 0.4)}
+ .flowplayer .fp-timeline { background-color: rgba(0, 0, 0, 0.5)}
+ .flowplayer .fp-progress { background-color: rgba(219, 0, 201, 1)}
+ .flowplayer .fp-buffer { background-color: rgba(249, 249, 249, 1)}

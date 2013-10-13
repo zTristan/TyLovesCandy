@@ -1,20 +1,10 @@
- <!-- player skin -->
- <link rel="stylesheet" type="text/css"
-    href="//releases.flowplayer.org/5.4.3/skin/playful.css">
- 
- <style>
-
- /* custom player skin */
- .flowplayer { width: 80%; background-color: #222; background-size: cover; max-width: 800px; }
- .flowplayer .fp-controls { background-color: rgba(0, 0, 0, 0.4)}
- .flowplayer .fp-timeline { background-color: rgba(0, 0, 0, 0.5)}
- .flowplayer .fp-progress { background-color: rgba(219, 0, 201, 1)}
- .flowplayer .fp-buffer { background-color: rgba(249, 249, 249, 1)}
-
- </style>
-
-<div data-swf="//releases.flowplayer.org/5.4.3/flowplayer.swf" class="flowplayer no-toggle play-button" data-ratio="0.416">
-  <video poster="http://farm4.staticflickr.com/3169/2972817861_73ae53c2e5_b.jpg">
-    <source type="video/x-flv" src="<%= video.upload.url %>"/>
-  </video>
+<div class="container">
+  <div class="span12 text-center page-header">
+    <h2><%= video.title %><small><%= video.description %></small></h2>
+    <div data-swf="/flowplayer.swf" class="flowplayer no-toggle play-button">
+      <video poster="<%= video.thumbnail_url %>">
+        <source type="<%= video.upload_content_type %>" src="<%= video.upload.url %>"/>
+      </video>
+    </div>
+  </div>
 </div>

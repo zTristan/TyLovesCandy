@@ -5,8 +5,8 @@ class User
 
   has_many :uploads
 
-  key :name, String
-  key :email, String
+  key :name, String, :required => true
+  key :email, String, :required => true, :unique => true
   key :password_digest, String
   attr_accessible :password, :password_confirmation
   has_secure_password

@@ -4,6 +4,7 @@ class Upload
 
   belongs_to :user
 
+  key :upload_content_type, String
   key :upload_file_name, String
   attr_accessible :upload
   has_attached_file :upload
