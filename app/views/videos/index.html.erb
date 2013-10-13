@@ -1,1 +1,5 @@
-Videos!
+Videos! <br/>
+
+<% @videos.each { |video| %>
+  <%= link_to video.title, video_path(video) %> <br/>
+<% } %>
