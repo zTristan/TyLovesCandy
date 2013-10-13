@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user].downcase)
+    @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Successfully created user."
