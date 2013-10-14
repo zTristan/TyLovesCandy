@@ -1,10 +1,11 @@
 <div class="container">
   <div class="span12 text-center page-header">
     <h2><%= video.title %><small><%= video.description %></small></h2>
-    <div data-swf="/flowplayer.swf" class="flowplayer no-toggle play-button">
-      <video poster="<%= video.thumbnail_url %>">
+    <div data-swf="/flowplayer.swf" class="flowplayer no-toggle play-button <%= size_class %>">
+      <video poster="<%= video.thumbnail.url %>">
         <source type="<%= video.upload_content_type %>" src="<%= video.upload.url %>"/>
       </video>
     </div>
   </div>
+  <a href="<%= video.upload.url %>" class="text-center">Download Video</a>
 </div>

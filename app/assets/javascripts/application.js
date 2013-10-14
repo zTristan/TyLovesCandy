@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
+//= require jquery.purr
+//= require best_in_place
 //= require twitter/bootstrap
-//= require jquery-fileupload
 //= require_tree .

@@ -4,7 +4,7 @@ gem 'rails', '3.2.14'
 
 gem 'sqlite3'
 gem 'mongo'
-gem 'mongo_mapper'
+gem 'mongoid'
 gem 'json'
 gem 'bson'
 gem 'bson_ext'
@@ -14,6 +14,7 @@ gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 gem 'aws-sdk'
 gem 'aasm'
+gem 'best_in_place'
 
 # Deploy with Capistrano
 gem 'capistrano'

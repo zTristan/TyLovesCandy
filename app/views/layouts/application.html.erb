@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag 'flowplayer.min.js' %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height" />
 </head>
 <body class="<%= params[:controller] %>">
 
@@ -31,9 +31,15 @@
             <div class="span4 pull-right">
             <% if @current_user %>
               <div class="btn-group pull-right">
-                <button class="btn btn-primary"><%= link_to "Upload", uploads_path %></button>
-                <button class="btn"><%= link_to @current_user.name, edit_user_path(@current_user) %><span class="badge pull-right">42</span></button>
-                <button class="btn"><%= link_to "Logout", session_path(session), :method => :delete %></button>
+                <button type="button" class="btn">
+                  <i class="icon-cloud-upload"></i> <%= link_to "Upload", uploads_path %>
+                </button>
+                <button type="button" class="btn">
+                  <i class="icon-user"></i> <%= link_to @current_user.name, edit_user_path(@current_user) %><span class="badge pull-right">42</span>
+                </button>
+                <button type="button" class="btn">
+                  <i class="icon-signout"></i> <%= link_to "Logout", session_path(session), :method => :delete %>
+                </button>
               </div>
               <% else %>
               <div class="btn-group pull-right">

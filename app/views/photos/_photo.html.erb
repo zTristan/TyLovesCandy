@@ -1,0 +1,8 @@
+<div class="photo">
+
+  <div class="name"><%= photo.title %></div>
+  <div class="name"><%= photo.description %></div>
+
+  <%= link_to image_tag(photo.upload.url(:square)), photo_path(photo) %>
+
+</div>
