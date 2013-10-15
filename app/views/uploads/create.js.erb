@@ -2,8 +2,8 @@
   alert("Failed to upload file: <%= j @upload.errors.full_messages.join(', ').html_safe %>");
 <% else %>
   <% if @upload._type == "Video" %>
-    $("#videos").append("<%= j quick_edit(@upload) %>");
+    $("#videos.row").append("<%= j quick_edit(@upload) %>");
   <% else %>
-    $("#photos").append("<%= j quick_edit(@upload) %>");
+    $("#photos.row").append("<%= j quick_edit(@upload) %>");
   <% end %>
 <% end %>
