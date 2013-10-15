@@ -18,31 +18,31 @@
   </div>
 <% end %>
 
-<div class="row" id="uploads">
-
-  <div class="tabbable">
-    <ul class="nav nav-tabs">
-      <li class="active"><a href="#photos" data-toggle="tab">Pictures</a></li>
-      <li><a href="#videos" data-toggle="tab">Videos</a></li>
-    </ul>
-    <div class="tab-content">
-      <div id="photos" class="tab-pane active">
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#photos" data-toggle="tab">Pictures</a></li>
+    <li><a href="#videos" data-toggle="tab">Videos</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="photos" class="tab-pane active">
+      <div class="row">
         <h4>Your Photos</h4>
         <% @uploads.each { |upload| if upload._type == "Photo" %>
-        <div class="span3">
+        <div class="col-md-4">
           <%= quick_edit(upload) %>
         </div>
         <% end } %>
       </div>
-      <div id="videos" class="tab-pane">
+    </div>
+    <div id="videos" class="tab-pane">
+      <div class="row">
         <h4>Your Videos</h4>
         <% @uploads.each { |upload| if upload._type == "Video" %>
-        <div class="span3">
+        <div class="col-md-4">
           <%= quick_edit(upload) %>
         </div>
       <% end } %>
-      </div>
-    </div><!-- /.tab-content -->
-  </div><!-- /.tabbable -->
-
-</div>
+    </div>
+    </div>
+  </div><!-- /.tab-content -->
+</div><!-- /.tabbable -->
