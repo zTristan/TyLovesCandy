@@ -1,10 +1,10 @@
 <h1>Video Gallery</h1>
 
 <div class="row">
-<% @videos.each { |video| %>
-<div class="span3">
-  <%= show_video(video, "flowplayer_small") %>
-  <%= link_to video.title, video_path(video) %>
-</div>
+<% (@videos * 30).each { |video| %>
+  <div class="span3">
+    <h3><%= video.title %></h3>
+    <%= link_to image_tag(video.thumbnail.url), video_path(video) %>
+  </div>
 <% } %>
 </div>

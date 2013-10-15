@@ -1,6 +1,45 @@
 <h2>Photos!</h2>
+
+<div id="carousel-example-generic" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% @carousel.count(true).times { |i| %>
+    <li data-target="#carousel-example-generic" data-slide-to="<%=i%>"<%= i == 0 ? " class='active'" : ""%>></li>
+    <% } %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% @carousel.each_with_index { |photo,i| %>
+    <div class="item<%= i == 0 ? ' active' : ""%>">
+      <img src="<%= photo.upload.url(:large) %>" alt="<%= photo.title %>">
+      <div class="carousel-caption">
+        <h3><%= photo.title %></h3>
+        <p><%= photo.description %></p>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <i class="icon-chevron-sign-left"></i> 
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <i class="icon-chevron-sign-right"></i> 
+  </a>
+</div>
+
+<script type="text/javascript">
+$('.carousel').carousel({
+  wrap: true
+})
+</script>
+
 <div class="row" id="photos">
   <% @photos.each { |photo| %>
+  <div class="span3">
     <%= render (photo) %>
+  </div>
   <% } %>
 </div>

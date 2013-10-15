@@ -19,7 +19,32 @@
 <% end %>
 
 <div class="row" id="uploads">
-  <% @uploads.each { |upload| %>
-    <%= quick_edit(upload) %>
-  <% } %>
+  <ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#photos">Pictures</a></li>
+    <li><a href="#videos">Videos</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="photos">
+      <% @uploads.each { |upload| if upload._type == "Photo" %>
+        <%= quick_edit(upload) %>
+      <% end } %>
+    </div>
+
+    <div class="tab-pane" id="videos">
+      <% @uploads.each { |upload| if upload._type == "Video" %>
+        <%= quick_edit(upload) %>
+      <% end } %>
+    </div>
+  </div>
 </div>
+
+<script>
+  $('#myTab a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+  $(function () {
+    $('#myTab a:first').tab('show')
+  })
+</script>

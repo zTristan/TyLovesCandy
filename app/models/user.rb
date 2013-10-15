@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
-  include Paperclip::Glue
+  include Mongoid::Timestamps
+  include Mongoid::Paperclip
   include ActiveModel::SecurePassword
 
   has_many :uploads
@@ -10,10 +11,7 @@ class User
   field :password_digest
   has_secure_password
 
-  attr_accessor :avatar_content_type
-  attr_accessor :avatar_file_size
-  attr_accessor :avatar
-  has_attached_file :avatar, styles: {
+  has_mongoid_attached_file :avatar, styles: {
     thumb: '100x100>'
   }, :default_style => :thumb
 

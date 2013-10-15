@@ -4,6 +4,7 @@ class PhotosController < UploadsController
 
   def index
     @photos = Photo.all
+    @carousel = Photo.desc(:created_at).limit(5)
   end
   
   def show

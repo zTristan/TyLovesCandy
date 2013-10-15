@@ -1,5 +1,6 @@
 class Upload
   include Mongoid::Document
+  include Mongoid::Timestamps
   include Mongoid::Paperclip
 
   belongs_to :user

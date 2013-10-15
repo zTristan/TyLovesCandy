@@ -1,5 +1,9 @@
 <% if not @upload or @upload.new_record? %>
   alert("Failed to upload file: <%= j @upload.errors.full_messages.join(', ').html_safe %>");
 <% else %>
-  $("#uploads").append("<%= j quick_edit(@upload) %>");
+  <% if @upload._type == "Video" %>
+    $("#videos").append("<%= j quick_edit(@upload) %>");
+  <% else %>
+    $("#photos").append("<%= j quick_edit(@upload) %>");
+  <% end %>
 <% end %>
