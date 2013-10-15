@@ -19,32 +19,30 @@
 <% end %>
 
 <div class="row" id="uploads">
-  <ul class="nav nav-tabs" id="myTab">
-    <li class="active"><a href="#photos">Pictures</a></li>
-    <li><a href="#videos">Videos</a></li>
-  </ul>
 
-  <div class="tab-content">
-    <div class="tab-pane active" id="photos">
-      <% @uploads.each { |upload| if upload._type == "Photo" %>
-        <%= quick_edit(upload) %>
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#photos" data-toggle="tab">Pictures</a></li>
+      <li><a href="#videos" data-toggle="tab">Videos</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="photos" class="tab-pane active">
+        <h4>Your Photos</h4>
+        <% @uploads.each { |upload| if upload._type == "Photo" %>
+        <div class="span3">
+          <%= quick_edit(upload) %>
+        </div>
+        <% end } %>
+      </div>
+      <div id="videos" class="tab-pane">
+        <h4>Your Videos</h4>
+        <% @uploads.each { |upload| if upload._type == "Video" %>
+        <div class="span3">
+          <%= quick_edit(upload) %>
+        </div>
       <% end } %>
-    </div>
+      </div>
+    </div><!-- /.tab-content -->
+  </div><!-- /.tabbable -->
 
-    <div class="tab-pane" id="videos">
-      <% @uploads.each { |upload| if upload._type == "Video" %>
-        <%= quick_edit(upload) %>
-      <% end } %>
-    </div>
-  </div>
 </div>
-
-<script>
-  $('#myTab a').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-  })
-  $(function () {
-    $('#myTab a:first').tab('show')
-  })
-</script>

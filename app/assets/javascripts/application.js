@@ -16,5 +16,5 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require jquery.purr
 //= require best_in_place
-//= require bootstrap.min
+//= require bootstrap
 //= require_tree .

@@ -1,4 +1,4 @@
-<h2 class="form-signin-heading text-center">Please sign in</h2>
+<h2 class="form-signin-heading text-center">Please log in</h2>
 <%= form_tag sessions_path, :class => 'form-signin' do %>
   <%= text_field_tag :email, params[:email], :class => "form-control", :placeholder => "Email address", :autofocus => true %>
   <%= password_field_tag :password, "", :class => "form-control", :placeholder => "Password" %>
