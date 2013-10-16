@@ -3,3 +3,41 @@
     <h1 class="header-title">Rankings</h1><h3 class="header-subtitle"></h3>
   </div>
 </div>
+
+<div class="table-responsive text-center">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+<!--         <th>Photos</th>
+        <th>Videos</th> -->
+        <th><%= image_tag "pink_candy_32.png" %> Candies</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each_with_index do |user, index| %>
+      <tr>
+        <td>
+          <%= 
+          case index
+          when 0
+            image_tag "rank_first.png"
+          when 1
+            image_tag "rank_second.png"
+          when 2
+            image_tag "rank_third.png"
+          else
+            index + 1
+          end 
+          %>
+        </td>
+        <td><%= user.name %></td>
+<!--         <td><%= user.uploads.where(:_type => "Photo").count %></td>
+        <td><%= user.uploads.where(:_type => "Video").count %></td> -->
+        <td><%= user.candy_count %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -4,7 +4,7 @@ jQuery ->
     add: (e, data) ->
       file = data.files[0]
       data.context = $(tmpl("template-upload", file))
-      $('#new_upload').append(data.context)
+      $('#upload_progress').append(data.context)
       data.submit()
       console.log(data)
     progress: (e, data) ->

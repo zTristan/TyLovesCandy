@@ -31,7 +31,6 @@ class User
 
     total_candies = 0
 
-    total_candies += self.candies.count
     total_candies += self.uploads.collect { |u| u.candy_count }.sum
 
     self.set(:candy_count, total_candies)

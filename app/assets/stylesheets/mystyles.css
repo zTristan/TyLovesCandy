@@ -156,25 +156,6 @@ form .field, form .actions {
   }
 }
 
- .quick_edit {
-  border: solid 1px #CCC;
-  padding: 10px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-
-  .name {
-    padding-top: 5px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  .actions {
-    font-size: 10px;
-    text-align: center;
-    color: #777;
-  }
-}
-
 .thumbnail {
   border: solid 2px #CCC;
   margin: 3px;

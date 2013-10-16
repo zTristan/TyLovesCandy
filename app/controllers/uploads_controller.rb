@@ -3,7 +3,7 @@ class UploadsController < ApplicationController
   respond_to :html, :json
 
   def index
-    @uploads = Upload.where(:user_id => @current_user._id).all
+    @uploads = Upload.where(:user_id => @current_user._id).desc(:created_at)
   end
 
   def show

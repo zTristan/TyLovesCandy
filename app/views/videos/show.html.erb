@@ -1,4 +1,4 @@
-<div class="col-md-6 text-center">
+<div class="content text-center">
   <h2><%= @video.title %><small><%= @video.description %></small></h2>
   <div data-swf="/flowplayer.swf" class="flowplayer minimalist">
     <video poster="<%= @video.thumbnail.url %>">
@@ -7,4 +7,6 @@
   </div>
 </div>
 
-<a href="<%= @video.upload.url %>" class="text-center">Download Video</a>
+<div class="content text-center">
+  <p>Not Playing? Try the <a href="<%= @video.upload.url %>" class="text-center">direct link</a>.</p>
+</div>

@@ -4,6 +4,8 @@
   </div>
 </div>
 
+<div id="upload_progress"></div>
+
 <%= form_for Upload.new, :html => { :multipart => true, :id => "new_upload" } do |f| %>
   <div class="fileupload-buttonbar">
     <span class="btn btn-success fileinput-button">
@@ -21,13 +23,11 @@
   </ul>
   <div class="tab-content">
     <div id="photos" class="tab-pane row active">
-      <h4>Your Photos</h4>
       <% @uploads.each { |upload| if upload._type == "Photo" %>
         <%= quick_edit(upload) %>
       <% end } %>
     </div>
     <div id="videos" class="tab-pane row">
-      <h4>Your Videos</h4>
       <% @uploads.each { |upload| if upload._type == "Video" %>
         <%= quick_edit(upload) %>
       <% end } %>
