@@ -28,17 +28,8 @@ namespace :deploy do
 
   desc "Restart the servers"
   task :restart, :roles => :app do
-    
-    # Reduce the number of workers by 10
-    run "for run in {1..10}; do kill -TTOU `cat #{File.join(shared_path,'pids','unicorn.pid')}`; done"
 
-    # Start new workers
-    run "kill -USR2 `cat #{File.join(shared_path,'pids','unicorn.pid')}`"
-
-    sleep 10
-
-    # Kill off old workers
-    run "kill `cat #{File.join(shared_path,'pids','unicorn.pid.oldbin')}`"
+    run "touch #{release_path}/tmp/restart.txt"
     
   end
 
