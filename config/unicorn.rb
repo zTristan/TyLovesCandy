@@ -1,3 +1,4 @@
+rails_env = ENV['RAILS_ENV'] || 'production'
 
 worker_processes 10
 
