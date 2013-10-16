@@ -1,6 +1,12 @@
 <div class="jumbotron">
   <div class="container">
-    <h1 class="header-title">Videos</h1><h3 class="header-subtitle"></h3>
+    <h1 class="header-title">Videos</h1>
+    <% if @category %>
+    <h3><%= @category.name %> - <%= @category.description %></h3>
+    <% else %>
+    <h3>All Videos</h3>
+    <% end %>
+  </div>
   </div>
 </div>
 

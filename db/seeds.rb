@@ -8,38 +8,39 @@
 
 Category.create([
   {
-    name: "Everything Else",
-    description: "Decorations, cake, and all around.",
-    type: Category::CategoryBoth
-  },
-  {
     name: "Wedding Wishes",
-    description: "Send Tyler and Candace your love.",
+    description: "Send Tyler and Candace your love",
     type: Category::CategoryVideo
   },
   {
     name: "Tyler and Candace",
-    description: "Because lets face it, they are very good looking.",
+    description: "Because lets face it, they are very good looking",
     type: Category::CategoryBoth
   },
   {
+    id: 
     name: "On The Dance Floor",
-    description: "Record who has the best moves or the most fun.",
+    description: "Who has the best moves or the most fun",
     type: Category::CategoryBoth
   },
   {
     name: "The Kissing Booth",
-    description: "Show you affection for each other.",
+    description: "Show you affection for each other",
     type: Category::CategoryBoth
   },  
   {
     name: "The Wedding Party",
-    description: "Brides Maids and Groomsmen.",
+    description: "Bridesmaids and Groomsmen",
     type: Category::CategoryBoth
   },
   {
     name: "Selfies",
     description: "Because you know you want to...",
     type: Category::CategoryPhoto
+  },
+  {
+    name: "Everything Else",
+    description: "Decorations, cake, and all around",
+    type: Category::CategoryBoth
   },
 ])

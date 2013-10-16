@@ -5,7 +5,10 @@
     </a>
     <div class="caption">
       <a href="<%= photo_path(photo) %>">
-      <h4><%= photo.title %><br/><small> by <%= photo.user.name %></small></h4>
+        <h4>
+          <% if photo.created_at > 15.minutes.ago %><span class="label label-default">New</span><% end %>
+          <%= photo.title %><br/><small> by <%= photo.user.name %></small>
+        </h4>
       </a>
       <%= render_candies(photo) %>
     </div>
