@@ -1,3 +1,10 @@
-<%= show_video(@video) %>
+<div class="col-md-6 text-center">
+  <h2><%= @video.title %><small><%= @video.description %></small></h2>
+  <div data-swf="/flowplayer.swf" class="flowplayer minimalist">
+    <video poster="<%= @video.thumbnail.url %>">
+      <source type="<%= @video.upload_content_type %>" src="<%= @video.upload.url %>"/>
+    </video>
+  </div>
+</div>
 
 <a href="<%= @video.upload.url %>" class="text-center">Download Video</a>

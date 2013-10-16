@@ -1,12 +1,4 @@
 jQuery ->
-  $('#myTab a').click = (e) ->
-    e.preventDefault()
-    $(this).tab('show')
-
-jQuery ->
-  $('#myTab a:first').tab('show')
-
-jQuery ->
   $('#new_upload').fileupload
     dataType: "script"
     add: (e, data) ->

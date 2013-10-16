@@ -1,0 +1,7 @@
+<%= form_tag give_candy_path, :class => "give_candy" do %>
+  <%= image_tag("pink_candy_32.png") %> <span class="badge" id=""><%= upload.candy_count %></span>
+  <% if @current_user and upload.can_give_candy? @current_user %>
+  <%= hidden_field_tag "upload_id", upload.id %>
+  <button type="submit" class="btn">Give Candy</button>
+  <% end %>
+<% end %>

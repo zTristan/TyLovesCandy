@@ -4,12 +4,6 @@
   src: url('AlexBrush-Regular.ttf') format('truetype');
 }
 
-html,
-body {
-  font-family: 'Numans', sans-serif;
-  height: 100%;
-}
-
 .jumbotron {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -37,34 +31,6 @@ body {
   width: 100%;
   height: 200px;
   z-index: -1;
-}
-
-#wrap {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -60px;
-  padding: 0 0 60px;
-}
-
-footer {
-  height: 60px;
-}
-
-#wrap > .container {
-  padding: 60px 15px 0;
-}
-.container .credit {
-  margin: 20px 0;
-}
-
-#footer > .container {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-code {
-  font-size: 80%;
 }
 
 .yield-content { 
@@ -207,4 +173,11 @@ form .field, form .actions {
     text-align: center;
     color: #777;
   }
+}
+
+.thumbnail {
+  border: solid 2px #CCC;
+  margin: 3px;
+  display:block;
+  text-align:center;
 }

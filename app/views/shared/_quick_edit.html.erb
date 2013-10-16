@@ -1,17 +1,21 @@
-<div class="col-md-4">
-<div class="quick_edit">
+<div class="col-sm-6 col-md-3">
+  <div class="thumbnail">
 
-  <div class="name"><%= best_in_place upload, :title %></div>
+    <a href="<%= upload._type == 'Video' ? video_path(upload) : photo_path(upload) %>">
+      <img data-src="holder.js/300x200" alt="<%= upload.title %>" src="<%= upload.thumbnail_url %>">
+    </a>
 
-  <div class="name"><%= best_in_place upload, :description %></div>
+    <div class="caption">
 
-  <% path = upload._type == "Video" ? video_path(upload) : photo_path(upload) %>
-  <%= link_to image_tag(upload.thumbnail_url), path %>
+      <div class="name"><%= best_in_place upload, :title %></div>
 
-  <div class="actions">
-    <button class="btn btn-lg btn-block">
-      <%= link_to fa_icon("trash", text: "delete"), upload_path(upload), :confirm => 'Really delete this?', :method => :delete  %>
-    </button>
+      <div class="name"><%= best_in_place upload, :description, :type => :textarea %></div>
+
+      <div class="actions">
+        <button class="btn btn-lg btn-block">
+          <%= link_to fa_icon("trash", text: "delete"), upload_path(upload), :confirm => 'Really delete this?', :method => :delete  %>
+        </button>
+      </div>
+    </div>
   </div>
-</div>
 </div>

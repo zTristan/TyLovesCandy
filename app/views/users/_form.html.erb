@@ -1,5 +1,5 @@
 <%= form_for @user, :html => {:class => 'form-signin'} do |f| %>
-<div class="span4">
+<div class="col-md-4">
   <%= f.text_field :name, :class => "form-control", :placeholder => "Name" %>
   <%= f.text_field :email, :class => "form-control", :placeholder => "Email address" %>
   <%= f.password_field :password, :class => "form-control", :placeholder => "Password" %>

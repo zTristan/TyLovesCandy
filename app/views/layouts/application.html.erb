@@ -8,68 +8,75 @@
 </head>
 <body class="<%= params[:controller] %>">
 
-  <!-- Fixed navbar -->
-  <div class="navbar navbar-default navbar-fixed-top">
+  <div id="wrap">
+
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "TyLovesCandy", root_path, :class => "navbar-brand" %>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Photos", photos_path %></li>
+            <li><%= link_to "Videos", videos_path %></li>
+            <li><%= link_to "Rankings", rankings_path %></li>
+            <li><%= link_to "How To Play", how_to_play_path %></li>        
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <div class="btn-group">
+                <% if @current_user %>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to fa_icon("cloud-upload", text: "Upload"), uploads_path %>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to fa_icon("user", text: @current_user.name), edit_user_path(@current_user) %> <span class="badge"><%= @current_user.candy_count %></span>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%=  %> <%= link_to fa_icon("signout", text: "Logout"), session_path(session), :method => :delete %>
+                </button>
+              <% else %>
+                <button class="btn btn-default navbar-btn">
+                  <%= link_to "Sign Up", new_user_path %>
+                </button>
+                <button class="btn btn-default navbar-btn">
+                  <%= link_to fa_icon("signin", text: "Login"), new_session_path %>
+                </button>
+                <% end %>
+              </div>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to "TyLovesCandy", root_path, :class => "navbar-brand" %>
+      <% if flash.count > 0 %>
+      <div class="row">
+        <div class="span12">        
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          <% end %> 
+        </div>
       </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Photos", photos_path %></li>
-          <li><%= link_to "Videos", videos_path %></li>
-          <li><%= link_to "Rankings", rankings_path %></li>
-          <li><%= link_to "How To Play", how_to_play_path %></li>        
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>       
-            <% if @current_user %>
-            <button type="button" class="btn btn-default navbar-btn">
-              <%= link_to fa_icon("cloud-upload", text: "Upload"), uploads_path %>
-            </button>
-            <button type="button" class="btn btn-default navbar-btn">
-              <%=  %> <%= link_to fa_icon("user", text: @current_user.name), edit_user_path(@current_user) %><span class="badge pull-right">42</span>
-            </button>
-            <button type="button" class="btn btn-default navbar-btn">
-              <%=  %> <%= link_to fa_icon("signout", text: "Logout"), session_path(session), :method => :delete %>
-            </button>
-          <% else %>
-            <button class="btn btn-default navbar-btn">
-              <%= link_to "Sign Up", new_user_path %>
-            </button>
-            <button class="btn btn-default navbar-btn">
-              <%= link_to fa_icon("signin", text: "Login"), new_session_path %>
-            </button>
-            <% end %>
-          </li>
-        </ul>
-      </div><!--/.nav-collapse -->
+      <% end %>
+
+      <%= yield %>
     </div>
+
   </div>
 
-  <div class="container">
-    <% if flash.count > 0 %>
-    <div class="row">
-      <div class="span12">        
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <% end %> 
-      </div>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted credit">Made by Tristan Stanley for Tyler and Candace - TyLovesCandy.com &copy; 2013</p>
     </div>
-    <% end %>
-
-    <%= yield %>
   </div>
-
-  <footer class="text-center">
-    <p>TyLovesCandy.com &copy; 2013</p>
-  </footer>
 
 <%= javascript_include_tag "application" %>
 </body>

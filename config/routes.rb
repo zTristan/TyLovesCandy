@@ -6,6 +6,7 @@ TyLovesCandy::Application.routes.draw do
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
+  post "give_candy" => "candies#give_candy", :as => "give_candy"
   resources :users
   resources :sessions
   resources :uploads

@@ -1,0 +1,14 @@
+<div class="col-sm-6 col-md-3">
+  <div class="thumbnail">
+    <a href="<%= photo_path(photo) %>">
+    <img data-src="holder.js/300x200" alt="<%= photo.title %>" src="<%= photo.upload.url(:square) %>">
+    </a>
+    <div class="caption">
+      <a href="<%= photo_path(photo) %>">
+      <h4><%= photo.title %><small> by <%= photo.user.name %></small></h4>
+      </a>
+      <p><%= photo.description %></p>
+      <%= render_candies(photo) %>
+    </div>
+  </div>
+</div>
