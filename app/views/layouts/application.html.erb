@@ -32,8 +32,8 @@
             <li>
               <div class="btn-group">
                 <% if @current_user %>
-                <button type="button" class="btn btn-default navbar-btn">
-                  <%= link_to fa_icon("cloud-upload", text: "Upload"), uploads_path %>
+                <button type="button" class="btn btn-success navbar-btn">
+                  <%= link_to fa_icon("cloud-upload", text: "Share"), uploads_path %>
                 </button>
                 <button type="button" class="btn btn-default navbar-btn">
                   <%= link_to fa_icon("user", text: @current_user.name), edit_user_path(@current_user) %> <span class="badge"><%= @current_user.candy_count %></span>

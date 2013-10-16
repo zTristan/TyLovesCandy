@@ -10,12 +10,13 @@ module ApplicationHelper
     render :partial => 'shared/photo_thumb', :locals => { :photo => photo }
   end
 
-  def quick_edit(upload)
-    render :partial => 'shared/quick_edit', :locals => { :upload => upload }
-  end
-
   def render_candies(upload)
     render :partial => 'shared/candies', :locals => { :upload => upload }
   end
+
+  def quick_edit(upload, categories)
+    render :partial => 'shared/quick_edit', :locals => { :upload => upload, :categories => categories }
+  end
+
   
 end

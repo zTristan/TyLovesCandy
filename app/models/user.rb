@@ -30,8 +30,7 @@ class User
   def update_candies
 
     total_candies = 0
-
-    total_candies += self.uploads.collect { |u| u.candy_count }.sum
+    total_candies += self.uploads.collect { |u| u.candy_count + (u._type == "Video" ? 2 : 1) }.sum
 
     self.set(:candy_count, total_candies)
   end

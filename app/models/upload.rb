@@ -9,14 +9,20 @@ class Upload
   has_many :candies
 
   field :title
-  field :description
+  field :description, default: ""
   field :candy_count, type: Integer, default: 0
   has_mongoid_attached_file :upload
 
-  before_create :default_title
+  before_create :default_title, :default_category
+  after_create :update_user_candies
+  after_destroy :update_user_candies
 
   def default_title
     self.title ||= File.basename(self.upload_file_name).titleize if self.upload
+  end
+
+  def default_category
+    self.category = Category.find_by(name: "Everything Else")
   end
 
   def thumbnail_url
@@ -28,7 +34,11 @@ class Upload
   end
 
   def can_give_candy? user
-    not self.candies.where( :user => user ).exists?
+    user != self.user and not self.candies.where( :user => user ).exists?
+  end
+
+  def update_user_candies
+    self.user.update_candies
   end
 
 end

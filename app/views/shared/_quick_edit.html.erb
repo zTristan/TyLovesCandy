@@ -7,8 +7,9 @@
 
     <div class="caption">
 
-      <div class="name"><%= best_in_place upload, :title %></div>
-      <div class="name"><%= best_in_place upload, :description, :type => :textarea, :nil => "description" %></div>
+      <div><%= best_in_place upload, :title %></div>
+      <div><%= best_in_place upload, :description, :type => :textarea, :nil => "add description" %></div>
+      <div><b>Category:</b> <%= best_in_place upload, :category_id, :type => :select, :collection => categories %></div>
 
       <div class="actions">
         <button class="btn btn-lg btn-block">

@@ -4,6 +4,8 @@ class UploadsController < ApplicationController
 
   def index
     @uploads = Upload.where(:user_id => @current_user._id).desc(:created_at)
+    @categories_photo = Category.photo_categories_edit
+    @categories_video = Category.video_categories_edit
   end
 
   def show
@@ -22,8 +24,10 @@ class UploadsController < ApplicationController
     content_type = params[:upload][:upload].content_type
     if content_type.match(/image/)
       @upload = Photo.new(params[:upload])
+      @categories = Category.photo_categories_edit
     elsif content_type.match(/video/)
       @upload = Video.new(params[:upload])
+      @categories = Category.video_categories_edit
     end
 
     if @upload

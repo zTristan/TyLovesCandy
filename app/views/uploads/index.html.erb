@@ -1,6 +1,13 @@
 <div class="jumbotron">
   <div class="container">
-    <h1 class="header-title">Uploads</h1><h3 class="header-subtitle"></h3>
+    <h1 class="header-title">Your Shares</h1><h3 class="header-subtitle"></h3>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p>Share your pictures and videos by tapping 'Add files...'. You can drag and drop multiple files if you're on a computer.</p>
+    <p>Be sure to change the title and category if needed. Longer descriptions are optional.</p>
   </div>
 </div>
 
@@ -24,12 +31,12 @@
   <div class="tab-content">
     <div id="photos" class="tab-pane row active">
       <% @uploads.each { |upload| if upload._type == "Photo" %>
-        <%= quick_edit(upload) %>
+        <%= quick_edit(upload, @categories_photo) %>
       <% end } %>
     </div>
     <div id="videos" class="tab-pane row">
       <% @uploads.each { |upload| if upload._type == "Video" %>
-        <%= quick_edit(upload) %>
+        <%= quick_edit(upload, @categories_video) %>
       <% end } %>
     </div>
   </div>
