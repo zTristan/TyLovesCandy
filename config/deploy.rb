@@ -5,10 +5,13 @@ set :user, "tristan"
 set :ssh_options, { :forward_agent => true }
 set :use_sudo, false
 
-role :web, "162.243.128.152"                          # Your HTTP server, Apache/etc
-role :app, "162.243.128.152"                          # This may be the same as your `Web` server
-role :db,  "162.243.128.152", :primary => true # This is where Rails migrations will run
-role :db,  "162.243.128.152"
+set :stages, %w(production)
+set :default_stage, :production
+
+role :web, "tylovescandy.com"                          # Your HTTP server, Apache/etc
+role :app, "tylovescandy.com"                          # This may be the same as your `Web` server
+role :db,  "tylovescandy.com", :primary => true # This is where Rails migrations will run
+role :db,  "tylovescandy.com"
 
 after "deploy:update", "deploy:cleanup"
 after "deploy", "config:symlink"

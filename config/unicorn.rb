@@ -1,11 +1,10 @@
 rails_env = ENV['RAILS_ENV'] || 'production'
 
-worker_processes 10
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 4) 
 
 working_directory "/var/www/TyLovesCandy/current"
 
 listen "/var/www/TyLovesCandy/shared/unicorn.sock", :backlog => 256
-
 pid "/var/www/TyLovesCandy/shared/pids/unicorn.pid"
 
 stderr_path "/var/log/TyLovesCandy/unicorn.log"
