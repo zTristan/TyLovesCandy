@@ -10,6 +10,8 @@ gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 gem 'aws-sdk'
 gem 'figaro'
+gem 'omniauth-facebook'
+gem "koala", "~> 1.7.0rc1"
 
 # Deploy with Capistrano
 gem 'capistrano'
@@ -32,8 +34,6 @@ group :assets do
   gem 'font-awesome-rails'
   gem 'sass-rails'
   gem 'best_in_place'
-  gem 'omniauth-facebook'
-  gem "koala", "~> 1.7.0rc1"
 end
 
 # To use Jbuilder templates for JSON

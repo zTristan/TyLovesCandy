@@ -6,7 +6,7 @@ class Upload
   belongs_to :user
   belongs_to :category
 
-  has_many :candies
+  has_many :candies, dependent: :delete
   embeds_many :comments
 
   field :title
