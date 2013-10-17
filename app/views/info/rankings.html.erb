@@ -33,8 +33,14 @@
           %>
         </td>
         <td>
-          <%= image_tag user.avatar.url, :class => "img-rounded img-responsive image-center" if user.avatar.url %>
-          <%= link_to_if user.uid, user.name, "https://facebook.com/#{user.uid}" %>
+          <div class="media">
+            <a class="pull-left" href="#">
+              <%= image_tag user.avatar.url, :class => "img-rounded img-responsive" %>
+            </a>
+            <div class="media-body pull-left">
+              <%= link_to_if user.uid, user.name, "https://facebook.com/#{user.uid}" %>
+            </div>
+          </div>
         </td>
 <!--         <td><%= user.uploads.where(:_type => "Photo").count %></td>
         <td><%= user.uploads.where(:_type => "Video").count %></td> -->
