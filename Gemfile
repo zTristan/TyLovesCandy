@@ -13,6 +13,14 @@ gem 'figaro'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.7.0rc1"
 gem 'font-awesome-rails'
+gem 'jquery-rails'
+gem 'jquery-fileupload-rails'
+gem 'less-rails'
+gem 'coffee-rails'
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
+gem 'sass-rails'
+gem 'best_in_place'
 
 # Deploy with Capistrano
 gem 'capistrano'
@@ -25,15 +33,7 @@ gem 'awesome_print'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'jquery-rails'
-  gem 'jquery-fileupload-rails'
-  gem 'less-rails'
-  gem 'coffee-rails'
-  gem 'execjs'
-  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier'
-  gem 'sass-rails'
-  gem 'best_in_place'
 end
 
 # To use Jbuilder templates for JSON
