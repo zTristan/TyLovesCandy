@@ -4,7 +4,11 @@
   src: url('AlexBrush-Regular.ttf') format('truetype');
 }
 
-.jumbotron {
+.image-center {
+    margin: 0 auto;
+}
+
+.creme_linen {
   padding-top: 10px;
   padding-bottom: 10px;
   background-image:url('creme_linen.jpg');

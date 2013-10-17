@@ -30,4 +30,12 @@ class Category
     self.photo_categories.collect { |category| [category.id, "#{category.name}"] }
   end
 
+  def top_photo
+    self.photos.desc(:candy_count).first
+  end
+
+  def top_video
+    self.videos.desc(:candy_count).first
+  end
+
 end

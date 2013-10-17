@@ -1,5 +1,5 @@
 class PhotosController < UploadsController
-  skip_before_filter :check_for_user
+  before_filter :check_for_user, :only => [:update]
 
   def index
 
@@ -7,12 +7,18 @@ class PhotosController < UploadsController
     @photos = Photo.desc(@sort)
 
     if params[:category] and @category = Category.find(params[:category])
-      @photos.where(:category_id => @category.id) 
+      @photos = @photos.where(:category_id => @category.id) 
     end
   end
   
   def show
     @photo = Photo.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    @photo.update_attributes(params[:photo])
+    respond_with @photo
   end
 
 end

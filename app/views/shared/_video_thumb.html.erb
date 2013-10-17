@@ -5,7 +5,10 @@
     </a>
     <div class="caption">
       <a href="<%= video_path(video) %>">
-      <h4><%= video.title %><small> by <%= video.user.name %></small></h4>
+      <h4>
+        <% if video.created_at > 1.hour.ago %><span class="label label-default">New</span><% end %>
+        <%= video.title %><br/><small> by <%= video.user.name %></small>
+      </h4>
       </a>
       <p><%= video.description %></p>
       <%= render_candies(video) %>
