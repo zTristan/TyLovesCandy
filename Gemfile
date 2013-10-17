@@ -12,6 +12,7 @@ gem 'aws-sdk'
 gem 'figaro'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.7.0rc1"
+gem 'font-awesome-rails'
 
 # Deploy with Capistrano
 gem 'capistrano'
@@ -31,7 +32,6 @@ group :assets do
   gem 'execjs'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier'
-  gem 'font-awesome-rails'
   gem 'sass-rails'
   gem 'best_in_place'
 end
