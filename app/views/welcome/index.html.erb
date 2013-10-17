@@ -6,7 +6,7 @@
 
 <div class="media">
   <a class="pull-left" href="#">
-    <%= image_tag("TyAndCandy.jpg", :class => "media-object") %>
+    <%= image_tag("TyAndCandy.jpg", :class => "media-object img-rounded img-responsive image-center") %>
   </a>
   <div class="media-body">
     <h4 class="media-heading">Welcome to Ty Loves Candy!</h4>
@@ -19,7 +19,9 @@
     <% @top_categories.each do |category| %>
     <div class="col-lg-4">
         <h2><%= category.name %></h2>
-        <%= image_tag category.top_photo.upload.url, :class => "img-rounded img-responsive image-center" %>
+        <% if category.top_photo %>
+        <%= link_to image_tag(category.top_photo.upload.url, :class => "img-rounded img-responsive image-center"), photo_path(category.top_photo) %>
+        <% end %>
     </div>
     <% end %>
   </div>

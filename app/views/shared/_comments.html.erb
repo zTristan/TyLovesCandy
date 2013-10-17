@@ -1,0 +1,23 @@
+<div class="container">
+  <% if upload.comments.count > 0 %>
+  <h3>Comments</h3>
+  <% upload.comments.each do |comment| %>
+  <div class="media">
+    <a class="pull-left" href="https://facebook.com/#{comment.user.uid}">
+      <%= image_tag comment.user.avatar.url, :class => "media-object" %>
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading"> <%= comment.user.name %><small> <%= comment.created_at.to_formatted_s(:long) %></h4>
+      <%= comment.content %>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+  <% if @current_user %>
+  <%= form_for Comment.new do |f| %>
+    <%= hidden_field_tag :upload_id, upload.id %>
+    <%= f.text_area :content, :class => "form-control", :rows => 3 %>
+    <%= f.submit "Add Comment", :class => "btn btn-lg btn-primary btn-block" %>
+  <% end %>
+  <% end %>
+</div>

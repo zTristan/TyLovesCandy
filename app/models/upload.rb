@@ -7,6 +7,7 @@ class Upload
   belongs_to :category
 
   has_many :candies
+  embeds_many :comments
 
   field :title
   field :description, default: ""

@@ -32,7 +32,10 @@
           end 
           %>
         </td>
-        <td><%= user.name %></td>
+        <td>
+          <%= image_tag user.avatar.url, :class => "img-rounded img-responsive image-center" if user.avatar.url %>
+          <%= link_to_if user.uid, user.name, "https://facebook.com/#{user.uid}" %>
+        </td>
 <!--         <td><%= user.uploads.where(:_type => "Photo").count %></td>
         <td><%= user.uploads.where(:_type => "Video").count %></td> -->
         <td><%= user.candy_count %></td>

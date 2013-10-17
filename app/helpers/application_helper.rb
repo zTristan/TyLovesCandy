@@ -15,5 +15,9 @@ module ApplicationHelper
   def quick_edit(upload, categories)
     render :partial => 'shared/quick_edit', :locals => { :upload => upload, :categories => categories }
   end
+
+  def render_comments(upload)
+    render :partial => 'shared/comments', :locals => { :upload => upload }
+  end
   
 end

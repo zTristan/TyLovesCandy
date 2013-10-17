@@ -9,13 +9,14 @@ gem 'bson_ext'
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 gem 'aws-sdk'
+gem 'figaro'
 
 # Deploy with Capistrano
 gem 'capistrano'
 gem 'capistrano-ext'
 
 #Admin password validation
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'awesome_print'
 
 # Gems used only for assets and not required
@@ -24,13 +25,15 @@ group :assets do
   gem 'jquery-rails'
   gem 'jquery-fileupload-rails'
   gem 'less-rails'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'coffee-rails'
   gem 'execjs'
   gem 'therubyracer', :platforms => :ruby
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
   gem 'font-awesome-rails'
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails'
   gem 'best_in_place'
+  gem 'omniauth-facebook'
+  gem "koala", "~> 1.7.0rc1"
 end
 
 # To use Jbuilder templates for JSON

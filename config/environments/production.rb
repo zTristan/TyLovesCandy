@@ -65,13 +65,12 @@ TyLovesCandy::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")[Rails.env]
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => APP_CONFIG["s3_bucket"],
-      :access_key_id => APP_CONFIG["s3_access_key_id"],
-      :secret_access_key => APP_CONFIG["s3_secret_access_key"]
+      :bucket => ENV["s3_bucket"],
+      :access_key_id => ENV["s3_access_key_id"],
+      :secret_access_key => ENV["s3_secret_access_key"]
     }
   }
 
