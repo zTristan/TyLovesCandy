@@ -2,6 +2,22 @@ class UploadsController < ApplicationController
   before_filter :check_for_user
   respond_to :html, :json
 
+  UploadLimit = 20
+  SortNew = :created_at
+  SortCandy = :candy_count
+
+  def get_uploads upload_class
+    @category = Category.find(params[:category]) if params[:category]
+    @limit  = params[:limit] ? params[:limit] : UploadLimit
+    @offset = [params[:offset].to_i, 0].max
+    @sort = params[:sort] ? params[:sort] : SortCandy
+    uploads = upload_class.limit(@limit + 1).offset(@offset * @limit).desc(@sort)
+    uploads = uploads.where(category_id: @category.id) if @category
+    @has_next_page = true if uploads.count > @limit
+    @has_prev_page = true if @offset > 0
+    return uploads
+  end
+
   def index
     @uploads = Upload.where(:user_id => @current_user._id).desc(:created_at)
     @categories_photo = Category.photo_categories_edit

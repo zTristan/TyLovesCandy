@@ -39,7 +39,7 @@ class Upload
   end
 
   def update_user_candies
-    self.user.update_candies
+    self.user.update_candies if self.user
   end
 
 end

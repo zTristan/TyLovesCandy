@@ -2,13 +2,7 @@ class PhotosController < UploadsController
   before_filter :check_for_user, :only => [:update]
 
   def index
-
-    @sort = params[:sort] | :created_at
-    @photos = Photo.desc(@sort)
-
-    if params[:category] and @category = Category.find(params[:category])
-      @photos = @photos.where(:category_id => @category.id) 
-    end
+    @photos = self.get_uploads(Photo)
   end
   
   def show

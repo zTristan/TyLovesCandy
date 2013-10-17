@@ -10,7 +10,16 @@
 </div>
 
 <div class="row">
+  <div class="text-center">
+    <%= render :partial => 'shared/sort_bar' %>
+  </div>
+  <div class="text-center">
+    <%= render :partial => 'shared/paginate' %>
+  </div>
   <% @photos.each { |photo| %>
   <%= render_photo_thumbnail(photo) %>
   <% } %>
+  <div class="text-center">
+    <%= render :partial => 'shared/paginate' %>
+  </div>
 </div>

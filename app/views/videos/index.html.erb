@@ -10,7 +10,16 @@
 </div>
 
 <div class="row">
-<% (@videos).each { |video| %>
-  <%= render_video_thumbnail(video) %>
-<% } %>
+  <div class="text-center">
+    <%= render :partial => 'shared/sort_bar' %>
+  </div>
+  <div class="text-center">
+    <%= render :partial => 'shared/paginate' %>
+  </div>
+  <% (@videos).each { |video| %>
+    <%= render_video_thumbnail(video) %>
+  <% } %>
+  <div class="text-center">
+    <%= render :partial => 'shared/paginate' %>
+  </div>
 </div>

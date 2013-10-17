@@ -4,7 +4,7 @@ class User
   include Mongoid::Paperclip
   include ActiveModel::SecurePassword
 
-  has_many :uploads
+  has_many :uploads, dependent: :delete
   has_many :candies
 
   field :provider
@@ -51,11 +51,7 @@ class User
   end
 
   def update_candies
-
-    total_candies = 0
-    total_candies += self.uploads.collect { |u| u.candy_count + (u._type == "Video" ? 2 : 1) }.sum
-
-    self.set(:candy_count, total_candies)
+    self.set(:candy_count, self.uploads.collect { |upload| upload.candy_count }.sum )
   end
 
   def password=(password_str)

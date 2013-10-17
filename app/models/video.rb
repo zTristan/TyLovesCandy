@@ -23,4 +23,8 @@ class Video < Upload
     self.thumbnail.url(:square)
   end
 
+  def update_candies
+    self.set(:candy_count, self.candies.count + 2)
+  end
+
 end  

@@ -7,7 +7,7 @@
       <a href="<%= photo_path(photo) %>">
         <h4>
           <% if photo.created_at > 1.hour.ago %><span class="label label-default">New</span><% end %>
-          <%= photo.title %><br/><small> by <%= photo.user.name %></small>
+          <%= photo.title %><br/><small> by <%= photo.user.name if photo.user %></small>
         </h4>
       </a>
       <%= render_candies(photo) %>
