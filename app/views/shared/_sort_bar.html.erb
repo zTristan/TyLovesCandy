@@ -1,3 +1,8 @@
-Sort Bar
-
-<button class="btn"><%= link_to "Sort New", "#" %></button>
+<div class="btn-group">
+  <button class="btn<%= ' disabled' if @sort == :created_at %>">
+    <%= link_to 'Newest', params.merge({:sort => :created_at, :page => 0}) %>
+  </button>
+  <button class="btn<%= ' disabled' if @sort == :candy_count %>">
+    <%= link_to 'Most Candy', params.merge({:sort => :candy_count, :page => 0}) %>
+  </button>
+</div>

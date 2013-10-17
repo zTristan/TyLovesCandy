@@ -1,1 +1,11 @@
-Paginate
+<ul class="pager">
+  <li class="previous<%= ' disabled' unless @has_prev_page %>">
+    <%= link_to 'Previous', params.merge({:page => @page - 1}) %>
+  </li>
+  <li>
+    Page <%= @page + 1 %>
+  </li>
+  <li class="next<%= ' disabled' unless @has_next_page %>">
+    <%= link_to 'Next', params.merge({:page => @page + 1}) %>
+  </li>
+</ul>

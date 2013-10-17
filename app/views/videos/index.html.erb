@@ -16,9 +16,15 @@
   <div class="text-center">
     <%= render :partial => 'shared/paginate' %>
   </div>
+</div>
+
+<div class="row">
   <% (@videos).each { |video| %>
     <%= render_video_thumbnail(video) %>
   <% } %>
+</div>
+
+<div class="row">
   <div class="text-center">
     <%= render :partial => 'shared/paginate' %>
   </div>

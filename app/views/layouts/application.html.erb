@@ -50,14 +50,12 @@
             <li>
               <div class="btn-group">
                 <% if @current_user %>
+                <p class="navbar-text">Welcome, <%= @current_user.name %></p>
                 <button type="button" class="btn btn-default navbar-btn">
                   <%= link_to fa_icon("cloud-upload", text: "Share"), uploads_path %>
                 </button>
                 <button type="button" class="btn btn-default navbar-btn">
-                  <%= link_to fa_icon("user", text: @current_user.name), edit_user_path(@current_user) %> <span class="badge"><%= @current_user.candy_count %></span>
-                </button>
-                <button type="button" class="btn btn-default navbar-btn">
-                  <%=  %> <%= link_to fa_icon("signout", text: "Logout"), session_path(session), :method => :delete, :id => "sign_out" %>
+                  <%= link_to fa_icon("signout", text: "Logout"), session_path(session), :method => :delete %>
                 </button>
               <% else %>
                 <button class="btn btn-default navbar-btn">

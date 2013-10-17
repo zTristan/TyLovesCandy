@@ -16,9 +16,15 @@
   <div class="text-center">
     <%= render :partial => 'shared/paginate' %>
   </div>
+</div>
+
+<div class="row">
   <% @photos.each { |photo| %>
   <%= render_photo_thumbnail(photo) %>
   <% } %>
+</div>
+
+<div class="row">
   <div class="text-center">
     <%= render :partial => 'shared/paginate' %>
   </div>
