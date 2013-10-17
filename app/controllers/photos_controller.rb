@@ -1,4 +1,5 @@
 class PhotosController < UploadsController
+  skip_before_filter :check_for_user
 
   def index
 

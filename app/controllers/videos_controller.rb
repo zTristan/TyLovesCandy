@@ -1,4 +1,5 @@
 class VideosController < UploadsController
+  skip_before_filter :check_for_user
 
   def index
     @sort = params[:sort] | :created_at
