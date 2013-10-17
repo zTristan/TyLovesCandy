@@ -79,4 +79,5 @@ TyLovesCandy::Application.configure do
 
   # Precompile additional assets
   config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+  config.assets.initialize_on_precompile = false
 end
