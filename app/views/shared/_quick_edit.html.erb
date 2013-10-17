@@ -2,7 +2,7 @@
   <div class="thumbnail">
 
     <a href="<%= upload._type == 'Video' ? video_path(upload) : photo_path(upload) %>">
-      <img data-src="holder.js/300x200" alt="<%= upload.title %>" src="<%= upload.thumbnail_url %>">
+      <img data-src="holder.js/300x200" alt="<%= upload.title %>" class="img-rounded img-responsive image-center" src="<%= upload.thumbnail_url %>">
     </a>
 
     <div class="caption">
