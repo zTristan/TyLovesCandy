@@ -18,7 +18,6 @@ Category.create([
     type: Category::CategoryBoth
   },
   {
-    id: 
     name: "On The Dance Floor",
     description: "Who has the best moves or the most fun",
     type: Category::CategoryBoth
