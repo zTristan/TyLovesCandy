@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
   private
   
   def current_user
-    @current_user ||= User.find(session[:user_id].to_s) if session[:user_id]
+    if session[:user_id] and User.where(id: session[:user_id]).exists?
+      @current_user = User.find(session[:user_id])
+    end
   end
   helper_method :current_user
 
