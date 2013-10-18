@@ -7,9 +7,18 @@
 
     <div class="caption">
 
-      <div><%= best_in_place upload, :title %></div>
-      <div><%= best_in_place upload, :description, :type => :textarea, :nil => "add description" %></div>
-      <div><b>Category:</b> <%= best_in_place upload, :category_id, :type => :select, :collection => categories %></div>
+      <div>
+        <%= best_in_place upload, :title, :activator => "#activator-title-#{upload.id}" %>
+        <a href="#" id="<%= "activator-title-#{upload.id}" %>">Edit</a>
+      </div>
+      <div>
+        <%= best_in_place upload, :description, :type => :textarea, :nil => "add description", :activator => "#activator-description-#{upload.id}" %>
+        <a href="#" id="<%= "activator-description-#{upload.id}" %>">Edit</a>
+      </div>
+      <div><b>Category:</b>
+        <%= best_in_place upload, :category_id, :type => :select, :collection => categories, :activator => "#activator-category-#{upload.id}" %>
+        <a href="#" id="<%= "activator-category-#{upload.id}"%>">Edit</a>
+      </div>
 
       <div class="actions">
         <button class="btn btn-lg btn-block">
