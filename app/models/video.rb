@@ -24,7 +24,8 @@ class Video < Upload
   end
 
   def update_candies
-    self.set(:candy_count, self.candies.count + 2)
+    self.set(:candy_count, Candy.where(upload_id: self.id).count(true) + 2)
+    super
   end
 
 end  

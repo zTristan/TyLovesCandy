@@ -14,7 +14,8 @@ class Photo < Upload
   end
 
   def update_candies
-    self.set(:candy_count, self.candies.count + 1)
+    self.set(:candy_count, Candy.where(upload_id: self.id).count(true) + 1)
+    super
   end
 
 end

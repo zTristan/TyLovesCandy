@@ -49,6 +49,8 @@ class UploadsController < ApplicationController
     if @upload
       @upload.user = @current_user
       @upload.save
+      @upload.update_candies
+      @current_user.update_candies
     end
   end
 

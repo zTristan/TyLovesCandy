@@ -15,6 +15,7 @@ class Upload
   has_mongoid_attached_file :upload
 
   before_create :default_title, :default_category
+  after_create :update_user_candies
   after_save :update_user_candies
   after_destroy :update_user_candies
 
@@ -31,7 +32,7 @@ class Upload
   end
 
   def update_candies
-    self.set(:candy_count, self.candies.count)
+    self.user.update_candies if user
   end
 
   def can_give_candy? user
