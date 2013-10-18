@@ -14,7 +14,7 @@ Category.create([
   },
   {
     name: "Tyler and Candace",
-    description: "Because lets face it, they are very good looking",
+    description: "Because let's face it, they are very good looking",
     type: Category::CategoryBoth
   },
   {
@@ -24,7 +24,7 @@ Category.create([
   },
   {
     name: "The Kissing Booth",
-    description: "Show you affection for each other",
+    description: "Show your affection for each other",
     type: Category::CategoryBoth
   },  
   {

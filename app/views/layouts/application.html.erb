@@ -55,7 +55,7 @@
                     <%= link_to fa_icon("cloud-upload", text: "Share"), uploads_path %>
                   </button>
                   <button type="button" class="btn btn-default navbar-btn">
-                    <%= link_to fa_icon("signout", text: "Logout"), session_path(session), :method => :delete %>
+                    <%= link_to fa_icon("signout", text: "Logout"), :controller => :sessions, :action => :destroy %>
                   </button>
                 </div>
               <% else %>

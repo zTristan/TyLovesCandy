@@ -14,6 +14,18 @@
   </div>
 </div>
 
+<% if not @current_user %>
+<div class="row text-center">
+  <p>Start playing by <%= link_to "logging in", new_session_path %>.</p>
+</div>
+<% else %>
+<div class="row text-center">
+  <p><%= link_to "Share your pictures now!", uploads_path %></p>
+</div>
+<% end %>
+
+</div>
+
 <div class="container">
   <div class="row">
     <% @top_categories.each do |category| %>

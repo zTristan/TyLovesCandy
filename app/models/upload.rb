@@ -15,7 +15,7 @@ class Upload
   has_mongoid_attached_file :upload
 
   before_create :default_title, :default_category
-  after_create :update_user_candies
+  after_save :update_user_candies
   after_destroy :update_user_candies
 
   def default_title

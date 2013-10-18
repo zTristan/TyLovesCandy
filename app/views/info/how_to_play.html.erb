@@ -22,5 +22,8 @@
     <p>The rankings board will keep track of who has the most candy for bragging rights.</p>
     <p>Let's keep it classy and fun, these pictures and videos will be seen by everyone.</p>
     <p>Have Fun! This is a special day, let's all enjoy it.</p>
+    <% if not @current_user %>
+    <p>Start playing by <%= link_to "logging in", new_session_path %>.</p>
+    <% end %>
   </div>
 </div>

@@ -5,7 +5,7 @@ class Candy
   belongs_to :user
   belongs_to :upload
 
-  after_create :update_upload_candies, :update_user_candies
+  after_save :update_upload_candies, :update_user_candies
   after_destroy :update_upload_candies, :update_user_candies
 
   def update_upload_candies
