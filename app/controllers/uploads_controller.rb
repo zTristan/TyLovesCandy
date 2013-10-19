@@ -11,9 +11,9 @@ class UploadsController < ApplicationController
     @limit  = params[:limit] ? params[:limit] : UploadLimit
     @page = [params[:page].to_i, 0].max
     @sort = params[:sort] ? params[:sort].to_sym : SortNew
-    uploads = upload_class.limit(@limit + 1).offset(@page * @limit).desc(@sort)
+    uploads = upload_class.limit(@limit).offset(@page * @limit).desc(@sort)
     uploads = uploads.where(category_id: @category.id) if @category
-    @has_next_page = true if uploads.count(true) > @limit
+    @has_next_page = true if uploads.count(true) >= @limit
     @has_prev_page = true if @page > 0
     return uploads
   end
