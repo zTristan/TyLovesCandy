@@ -15,5 +15,10 @@
     </div>
     <p><%= @video.description %></p>
   </div>
+  <% if @video.candy_count > 0 %>
+  <div class="row text-center">
+  <%= @video.candies.collect { |candy| candy.user.name }.join (", ") %> gave candy.
+  </div>
+  <% end %>  
   <%= render_comments(@video) %>
 </div>

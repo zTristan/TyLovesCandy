@@ -8,5 +8,10 @@
     </div>
     <p><%= @photo.description %></p>
   </div>
+  <% if @photo.candy_count > 0 %>
+  <div class="row text-center">
+  <%= @photo.candies.collect { |candy| candy.user.name }.join (", ") %> gave candy.
+  </div>
+  <% end %>
   <%= render_comments(@photo) %>
 </div>
