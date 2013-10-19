@@ -11,6 +11,9 @@
         </h4>
       </a>
       <%= render_candies(photo) %>
+      <div class="row">
+        <%= fa_icon "comment", text: photo.comments.count.to_s %>
+      </div>
     </div>
   </div>
 </div>
