@@ -11,6 +11,11 @@
 
 <div class="row">
   <div class="text-center">
+    <% if @current_user %>
+    <div class="row text-center">
+      <p><%= link_to "Share your videos now!", uploads_path %></p>
+    </div>
+    <% end %>
     <%= render :partial => 'shared/sort_bar' %>
   </div>
   <div class="text-center">
@@ -25,7 +30,7 @@
 </div>
 
 <div class="row">
-  <div class="text-center">
+  <d_iv class="text-center">
     <%= render :partial => 'shared/paginate' %>
   </div>
 </div>
