@@ -1,29 +1,19 @@
 <div class="jumbotron creme_linen">
   <div class="container">
-    <h1 class="header-title">Ty Loves Candy</h1><h3 class="header-subtitle">A Wedding Game for Tyler Stanley and Candace Flores</h3>
+    <h1 class="header-title">Ty Loves Candy</h1>
   </div>
 </div>
 
-<div class="media">
-  <a class="pull-left" href="#">
-    <%= image_tag("TyAndCandy.jpg", :class => "media-object img-rounded img-responsive image-center") %>
-  </a>
-  <div class="media-body">
-    <h4 class="media-heading">Welcome to Ty Loves Candy!</h4>
-    This game was created to make lasting photo and video wedding memories for the happy couple. It also allows those unable to attend to participate in the festivities. Tell your friends and family to sign up and join in on the fun! Read the <%= link_to "How To Play", how_to_play_path %> page for more details.
+<div class="container">
+  <div class="col-lg-2 text-center">
   </div>
-</div>
-
-<% if not @current_user %>
-<div class="row text-center">
-  <p>Start playing by <%= link_to "logging in", new_session_path %>.</p>
-</div>
-<% else %>
-<div class="row text-center">
-  <p><%= link_to "Share your pictures now!", uploads_path %></p>
-</div>
-<% end %>
-
+  <div class="col-lg-8 text-center">
+    <iframe src="//player.vimeo.com/video/87587077" width="600" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+    <p>
+    <a href="http://vimeo.com/87587077">
+      Ready For Anything // Candace and Tyler's Wedding Highlight Film from The Heights Villa in Houston, Texas</a> from <a href="http://vimeo.com/whoismatt">Matt Johnson @ WhoIsMatt.com</a> on <a href="https://vimeo.com">Vimeo</a>.
+    </p>
+  </div>
 </div>
 
 <div class="container">
